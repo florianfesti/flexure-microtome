@@ -8,18 +8,18 @@ union() {
         translate([0, 0, -1])cylinder(7, r=ri);
     }
     difference() { // outer ring
-        cylinder(40, r=ri+10);
+        cylinder(37, r=ri+10);
         translate([0, 0, -1]) cylinder(32, r=ri+7);
         translate([0, -10, -1]) cube([2*ri, 20, 100]);
-        translate([-5-ri, 50, 3*ri+15]) rotate([90, 0, 0]) cylinder(100, r=3*ri);
+        translate([-5-ri, 50, 3*ri+7]) rotate([90, 0, 0]) cylinder(100, r=3*ri);
         for (a = [-50, 50]) {
             rotate([0, 0, a]) translate([ri+11, 0, 4+5]) cube([20, 6, 6], center=true);
         }
     }
     // Hooks for rubber band
-    for (a = [-60, 60]) {
-        rotate([0, 0, a]) translate([ri+8.5, 0, 28]) cylinder(10, d=3, center=true);
-        rotate([0, 0, a]) translate([ri+8.5, 0, 33]) sphere(d=3);
+    for (a = [-65, 65]) {
+        rotate([0, 0, a]) translate([ri+8.5, 0, 18]) cylinder(10, d=2.8, center=true);
+        rotate([0, 0, a]) translate([ri+8.5, 0, 23]) sphere(d=3);
     }
     // moving chamber
     translate([0, 0, 10])difference(){
@@ -44,7 +44,7 @@ union() {
         // top notch
         translate([ri+1.5, 0, 39.5])rotate([90, 0, 0])cylinder(3*ri, d=2.5, center=true);
         // mounting holes
-        for (i = [0:2])
+        for (i = [0:3])
             translate([0, 0, 15+i*5.5])rotate([0, 90, 0])cylinder(ri+10, d=3);
         translate([ri+3, -5.5/2, 15-5.5/2])cube([2.5, 5.5, 30]);
     }
